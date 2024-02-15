@@ -19,7 +19,7 @@ const Card = ({
   rentalConditions,
   mileage,
 }) => {
-  const [_, city, country] = address.split(', '); // ["", "Kyiv", "Ukraine"]
+  const [, city, country] = address.split(', '); // ["", "Kyiv", "Ukraine"]
   const options = [city, country, make, model, type, id, ...functionalities];
   return (
     <StyledCard>

@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "./static/css/main.7acaea2f.css",
-    "main.js": "./static/js/main.208e16ab.js",
+    "main.css": "./static/css/main.ad41cf56.css",
+    "main.js": "./static/js/main.a181d7df.js",
+    "static/media/Ford-Mustang-Blue.png": "./static/media/Ford-Mustang-Blue.9a2e083dfb2ada64cf7a.png",
     "index.html": "./index.html",
-    "main.7acaea2f.css.map": "./static/css/main.7acaea2f.css.map",
-    "main.208e16ab.js.map": "./static/js/main.208e16ab.js.map"
+    "main.ad41cf56.css.map": "./static/css/main.ad41cf56.css.map",
+    "main.a181d7df.js.map": "./static/js/main.a181d7df.js.map"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
-    "static/js/main.208e16ab.js"
+    "static/css/main.ad41cf56.css",
+    "static/js/main.a181d7df.js"
   ]
 }

@@ -1,18 +1,22 @@
 import React from 'react';
+import { StyledHome } from './Home.styled';
 
 const Home = () => {
   return (
-    <div>
-      <p>
-        Наш сайт - ваш надійний партнер у світі подорожей! Зручна платформа для
-        оренди автомобілів, яка допомагає забезпечити безперешкодне
-        подорожування. Ми пропонуємо широкий вибір якісних автомобілів за
-        доступними цінами. Наші послуги орієнтовані на ваш комфорт і зручність -
-        простий процес бронювання, гнучкі умови і надійна підтримка клієнтів.
-        Незалежно від того, чи ви подорожуєте для бізнесу або відпочинку, ми
-        стежимо, щоб ваші автомобільні пригоди були незабутні та безпечні.
+    <StyledHome>
+      <h1 className="title animate__animated animate__slideInDown">
+        Discover Your Drive: <br /> Your Ultimate Car Rental Destination
+      </h1>
+      <p className="descr animate__animated animate__slideInUp">
+        Our website is your reliable partner in the world of travel! A
+        convenient platform for car rental that helps ensure seamless travel. We
+        offer a wide selection of quality cars at affordable prices. Our
+        services are tailored to your comfort and convenience - easy booking
+        process, flexible conditions, and reliable customer support. Whether you
+        are traveling for business or leisure, we ensure that your automotive
+        adventures are unforgettable and safe.
       </p>
-    </div>
+    </StyledHome>
   );
 };
 

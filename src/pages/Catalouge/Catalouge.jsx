@@ -39,6 +39,9 @@ const Catalogue = () => {
           />
         ))}
       </div>
+      <button type="button" className="loadBtn">
+        Load more
+      </button>
     </StyledCatalogue>
   );
 };

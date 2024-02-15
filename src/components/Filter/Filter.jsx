@@ -17,7 +17,7 @@ const Filter = () => {
         <input type="text" />
         <input type="text" />
       </div>
-      <button>Search</button>
+      <button className="saerchBtn">Search</button>
     </StyledFilter>
   );
 };

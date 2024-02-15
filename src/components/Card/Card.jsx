@@ -19,17 +19,26 @@ const Card = ({
   rentalConditions,
   mileage,
 }) => {
-  const [, city, country] = address.split(', '); // ["", "Kyiv", "Ukraine"]
-  const options = [city, country, make, model, type, id, ...functionalities];
+  const [, city, country] = address.split(', ');
+  const options =
+    functionalities && functionalities.length > 0
+      ? [city, country, rentalCompany, type, model, id, functionalities[0]]
+      : [city, country, rentalCompany, type, model, id];
   return (
     <StyledCard>
-      <img src={img} alt={description} />
-      <div>
-        <p>{model}</p>
-        <p>{rentalPrice}</p>
+      <div className="container">
+        <div className="image" style={{ backgroundImage: `url(${img})` }}></div>
+        <div className="title">
+          <p>
+            {make} <span className="model">{model}</span>, {year}
+          </p>
+          <p>{rentalPrice}</p>
+        </div>
+        <div className="options">{options.join(' | ')}</div>
       </div>
-      <div>{options.join(' | ')}</div>
-      <button type="button">Learn More</button>
+      <button type="button" className="learnBtn">
+        <p> Learn more</p>
+      </button>
     </StyledCard>
   );
 };

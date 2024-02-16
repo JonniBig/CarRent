@@ -4,7 +4,7 @@ import { HOME_ROUTE, CATALOGUE_ROUTE, FAVOURITE_ROUTE } from 'constants/routes';
 import { Route, Routes } from 'react-router-dom';
 import Catalogue from 'pages/Catalouge/Catalouge';
 import Favourite from 'pages/Favourite/Favourite';
-import Layout from 'components/Layout/Layout';
+import { Layout } from 'components';
 
 export const App = () => {
   return (

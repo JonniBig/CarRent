@@ -30,10 +30,7 @@ export const StyledCard = styled.div`
     margin-bottom: 14px;
     width: 274px;
     height: 268px;
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    object-fit: cover;
   }
   .learnBtn {
     color: white;
@@ -46,5 +43,18 @@ export const StyledCard = styled.div`
   }
   .learnBtn:hover {
     background-color: rgb(11, 68, 205);
+  }
+  .imgWrapper {
+    position: relative;
+  }
+  .heart {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    border: none;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 `;

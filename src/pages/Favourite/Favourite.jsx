@@ -1,14 +1,14 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { StyledFavourite } from './Favourite.styled';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { selectCars, selectFavCarsIds } from '../../redux/selectors';
-import { fetchCars } from '../../redux/carsSlice';
+// import { fetchCars } from '../../redux/carsSlice';
 import { Card } from 'components';
 
 const Favourite = () => {
   const cars = useSelector(selectCars);
   const favCarIds = useSelector(selectFavCarsIds);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   // useEffect(() => {
   //   dispatch(fetchCars());

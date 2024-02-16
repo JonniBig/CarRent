@@ -1,14 +1,17 @@
 {
   "files": {
-    "main.css": "./static/css/main.ad41cf56.css",
-    "main.js": "./static/js/main.a181d7df.js",
+    "main.css": "./static/css/main.83ad053b.css",
+    "main.js": "./static/js/main.24215914.js",
     "static/media/Ford-Mustang-Blue.png": "./static/media/Ford-Mustang-Blue.9a2e083dfb2ada64cf7a.png",
+    "static/media/heart-active.svg": "./static/media/heart-active.e49e82308e5c18848ca61fae14bc0d00.svg",
+    "static/media/heart-normal.svg": "./static/media/heart-normal.14c1f2cc238af802475dc01841f4c976.svg",
     "index.html": "./index.html",
-    "main.ad41cf56.css.map": "./static/css/main.ad41cf56.css.map",
-    "main.a181d7df.js.map": "./static/js/main.a181d7df.js.map"
+    "static/media/close.svg": "./static/media/close.d574e31d46f7a721ccae3e59794af9d1.svg",
+    "main.83ad053b.css.map": "./static/css/main.83ad053b.css.map",
+    "main.24215914.js.map": "./static/js/main.24215914.js.map"
   },
   "entrypoints": [
-    "static/css/main.ad41cf56.css",
-    "static/js/main.a181d7df.js"
+    "static/css/main.83ad053b.css",
+    "static/js/main.24215914.js"
   ]
 }

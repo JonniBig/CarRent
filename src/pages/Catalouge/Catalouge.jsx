@@ -2,11 +2,24 @@ import React, { useEffect, useState } from 'react';
 import { Card, Filter } from 'components/';
 import { useDispatch, useSelector } from 'react-redux';
 import { StyledCatalogue } from './Catalogue.styled';
-import { selectCars } from '../../redux/selectors';
+import {
+  selectCars,
+  selectFilterBrand,
+  selectFilterMileageFrom,
+  selectFilterMileageTo,
+  selectFilterRent,
+} from '../../redux/selectors';
 import { fetchCars } from '../../redux/carsSlice';
 
 const Catalogue = () => {
   const cars = useSelector(selectCars);
+  const filterBrand = useSelector(selectFilterBrand);
+  const filterRent = useSelector(selectFilterRent);
+  const filterMileageFrom = useSelector(selectFilterMileageFrom);
+  console.log('filterMileageFrom: ', filterMileageFrom);
+  const filterMileageTo = useSelector(selectFilterMileageTo);
+  console.log('filterMileageTo: ', filterMileageTo);
+
   const dispatch = useDispatch();
   const [page, setPage] = useState(1);
 
@@ -18,11 +31,53 @@ const Catalogue = () => {
     dispatch(fetchCars(page));
   }, [dispatch, page]);
 
+  const filteredCars = cars?.filter(car => {
+    if (filterBrand === '' && filterRent === '') {
+      return true;
+    }
+    if (filterBrand === '') {
+      return (
+        parseInt(car.rentalPrice.replace('$', ''), 10) >= 30 &&
+        parseInt(car.rentalPrice.replace('$', ''), 10) <=
+          parseInt(filterRent.replace('$', ''), 10)
+      );
+    }
+    if (filterRent === '') {
+      return car.make === filterBrand;
+    }
+    return (
+      car.make === filterBrand &&
+      parseInt(car.rentalPrice.replace('$', ''), 10) >= 30 &&
+      parseInt(car.rentalPrice.replace('$', ''), 10) <=
+        parseInt(filterRent.replace('$', ''), 10)
+    );
+  });
+
+  const filteredCarsInMileageRange = filteredCars?.filter(car => {
+    if (filterMileageFrom === '' && filterMileageTo === '') {
+      return true;
+    }
+    if (filterMileageFrom !== '' && filterMileageTo !== '') {
+      return (
+        car.mileage <= parseInt(filterMileageTo, 10) &&
+        car.mileage >= parseInt(filterMileageFrom, 10)
+      );
+    }
+
+    if (filterMileageFrom === '') {
+      return car.mileage <= parseInt(filterMileageTo, 10);
+    }
+    if (filterMileageTo === '') {
+      return car.mileage >= parseInt(filterMileageFrom, 10);
+    }
+    return true;
+  });
+
   return (
     <StyledCatalogue>
       <Filter />
       <div className="carsWrapper">
-        {cars.map(car => (
+        {filteredCarsInMileageRange.map(car => (
           <Card
             key={car.id}
             id={car.id}

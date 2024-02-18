@@ -70,9 +70,12 @@ const CarDetail = ({
           </p>
         </div>
       </div>
-      <button type="button" className="rentBtn">
-        <p>Rental car</p>
-      </button>
+
+      <a href="tel:+380730000000">
+        <button type="button" className="rentBtn">
+          <p>Rental car</p>
+        </button>
+      </a>
     </StyledCarDetail>
   );
 };

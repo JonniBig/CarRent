@@ -2,6 +2,7 @@ import React from 'react';
 import { StyledFavourite } from './Favourite.styled';
 import { useSelector } from 'react-redux';
 import { selectCars, selectFavCarsIds } from '../../redux/selectors';
+
 // import { fetchCars } from '../../redux/carsSlice';
 import { Card } from 'components';
 
@@ -17,7 +18,7 @@ const Favourite = () => {
   const favouriteCars = cars.filter(car => favCarIds.includes(car.id));
   return (
     <StyledFavourite>
-      <h2 className="title animate__animated animate__slideInDown">
+      <h2 className="fav-title animate__animated animate__slideInDown">
         Make the right choice for your next trip or road adventure. <br /> Your
         favorite cars are waiting for you here!
       </h2>

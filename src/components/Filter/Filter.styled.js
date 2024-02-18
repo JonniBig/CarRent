@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledFilter = styled.div`
+export const StyledFilter = styled.form`
   display: flex;
   justify-content: space-between;
   width: 859px;

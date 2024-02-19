@@ -66,33 +66,59 @@ const Filter = () => {
   return (
     <StyledFilter onSubmit={onSubmit}>
       <div>
-        <p>Car brand</p>
+        <p className="filterTitle">Car brand</p>
         <Select
           defaultValue={selectedCarBrand}
           onChange={setSelectedCarBrand}
           options={carBrands}
+          className="inputBrand"
+          styles={{
+            control: (provided, state) => ({
+              ...provided,
+              height: '48px',
+              borderRadius: '14px',
+              backgroundColor: 'rgb(247, 247, 251)',
+              border: 'none',
+            }),
+          }}
         />
       </div>
       <div>
-        <p>Price/ 1 hour</p>
+        <p className="filterTitle">Price/ 1 hour</p>
         <Select
           defaultValue={selectedCarRent}
           onChange={setSelectedCarRent}
           options={carRent}
+          className="inputRent"
+          styles={{
+            control: (provided, state) => ({
+              ...provided,
+              height: '48px',
+              borderRadius: '14px',
+              backgroundColor: 'rgb(247, 247, 251)',
+              border: 'none',
+            }),
+          }}
         />
       </div>
       <div>
-        <p>Car mileage / km</p>
-        <input
-          value={mileageFrom}
-          onChange={e => setMileageFrom(e.target.value)}
-          type="text"
-        />
-        <input
-          value={mileageTo}
-          onChange={e => setMileageTo(e.target.value)}
-          type="text"
-        />
+        <p className="filterTitle">Car mileage / km</p>
+        <div className="inputContainer">
+          <input
+            value={mileageFrom}
+            onChange={e => setMileageFrom(e.target.value)}
+            type="text"
+            placeholder="From"
+            className="inputMileageL"
+          />
+          <input
+            value={mileageTo}
+            onChange={e => setMileageTo(e.target.value)}
+            type="text"
+            placeholder="To"
+            className="inputMileageR"
+          />
+        </div>
       </div>
       <button type="submit" className="saerchBtn">
         Search

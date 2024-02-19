@@ -18,13 +18,11 @@ export const StyledModal = styled.div`
     top: 50%;
     left: 50%;
     translate: -50% -50%;
-    padding: 40px;
     border-radius: 24px;
     background-color: white;
     max-width: 541px;
     width: 100vw;
-    max-height: 752px;
-    height: 100vh;
+
     overflow: auto;
   }
 

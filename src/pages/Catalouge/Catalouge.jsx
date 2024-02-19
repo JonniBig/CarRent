@@ -16,9 +16,7 @@ const Catalogue = () => {
   const filterBrand = useSelector(selectFilterBrand);
   const filterRent = useSelector(selectFilterRent);
   const filterMileageFrom = useSelector(selectFilterMileageFrom);
-  console.log('filterMileageFrom: ', filterMileageFrom);
   const filterMileageTo = useSelector(selectFilterMileageTo);
-  console.log('filterMileageTo: ', filterMileageTo);
 
   const dispatch = useDispatch();
   const [page, setPage] = useState(1);

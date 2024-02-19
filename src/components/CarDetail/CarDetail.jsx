@@ -31,8 +31,6 @@ const CarDetail = ({
           `Type: ${type}`,
           `FuelConsumption: ${fuelConsumption}`,
           `EngineSize: ${engineSize}`,
-          //   model,
-          //   functionalities[0],
         ]
       : [
           city,
@@ -46,29 +44,28 @@ const CarDetail = ({
 
   return (
     <StyledCarDetail>
-      <div className="container">
-        <img src={img} alt={description} className="image" />
-        <div className="title">
-          <p>
-            {make} <span className="model">{model}</span>, {year}
-          </p>
-        </div>
-        <div className="options">{options.join(' | ')}</div>
-        <p>{description}</p>
-        <div>
-          <h3>Accessories and functionalities:</h3>
-          <p>{accessories.join(' | ')}</p>
-        </div>
-        <div>
-          <h3>Rental Conditions: </h3>
-          <p>
-            {conditions?.map(item => (
-              <span key={item}>{item}</span>
-            ))}
-            Mileage: <span>{mileage}</span>
-            Price: <span>{rentalPrice}</span>
-          </p>
-        </div>
+      {/* <div className="container"> */}
+      <img src={img} alt={description} className="image" />
+      <div className="title">
+        <p>
+          {make} <span className="model">{model}</span>, {year}
+        </p>
+      </div>
+      <div className="options">{options.join(' | ')}</div>
+      <p>{description}</p>
+      <div>
+        <h3>Accessories and functionalities:</h3>
+        <p>{accessories.join(' | ')}</p>
+      </div>
+      <div>
+        <h3>Rental Conditions: </h3>
+        <p>
+          {conditions?.map(item => (
+            <span key={item}>{item}</span>
+          ))}
+          Mileage: <span>{mileage}</span>
+          Price: <span>{rentalPrice}</span>
+        </p>
       </div>
 
       <a href="tel:+380730000000">
@@ -76,6 +73,7 @@ const CarDetail = ({
           <p>Rental car</p>
         </button>
       </a>
+      {/* </div> */}
     </StyledCarDetail>
   );
 };

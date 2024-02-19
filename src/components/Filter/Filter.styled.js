@@ -46,15 +46,22 @@ export const StyledFilter = styled.form`
     border-right: 1px solid rgba(226, 226, 228, 1);
 
     background-color: rgb(247, 247, 251);
-    width: 160px;
-    height: 48px;
+    width: 122px;
+    height: 20px;
+    padding: 14px 24px;
   }
   .inputMileageR {
     border-top-right-radius: 14px;
     border-bottom-right-radius: 14px;
     border: none;
     background-color: rgb(247, 247, 251);
-    width: 160px;
-    height: 48px;
+    width: 122px;
+    height: 20px;
+    padding: 14px 24px;
+  }
+  ::placeholder {
+    color: black;
+    font-weight: 500;
+    font-size: 18px;
   }
 `;

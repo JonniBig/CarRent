@@ -52,19 +52,25 @@ const CarDetail = ({
         </p>
       </div>
       <div className="options">{options.join(' | ')}</div>
-      <p>{description}</p>
+      <p className="description">{description}</p>
       <div>
-        <h3>Accessories and functionalities:</h3>
-        <p>{accessories.join(' | ')}</p>
+        <h3 className="h3Title">Accessories and functionalities:</h3>
+        <p className="accessories">{accessories.join(' | ')}</p>
       </div>
       <div>
-        <h3>Rental Conditions: </h3>
-        <p>
+        <h3 className="h3Title">Rental Conditions: </h3>
+        <p className="conditionsContainer">
           {conditions?.map(item => (
-            <span key={item}>{item}</span>
+            <span className="conditions" key={item}>
+              {item}
+            </span>
           ))}
-          Mileage: <span>{mileage}</span>
-          Price: <span>{rentalPrice}</span>
+          <span className="conditions">
+            Mileage: <span className="value">{mileage.toLocaleString()}</span>
+          </span>
+          <span className="conditions">
+            Price: <span className="value">{rentalPrice}</span>
+          </span>
         </p>
       </div>
 

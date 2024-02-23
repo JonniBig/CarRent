@@ -63,42 +63,69 @@ const Filter = () => {
     dispatch(setFilterMileageFrom(mileageFrom));
     dispatch(setFilterMileageTo(mileageTo));
   };
+  const filterStyles = {
+    control: (provided, state) => ({
+      ...provided,
+      height: '48px',
+      borderRadius: '14px',
+      backgroundColor: 'rgb(247, 247, 251)',
+      border: 'none',
+    }),
+    indicatorSeparator: () => ({
+      display: 'none',
+    }),
+    dropdownIndicator: (provided, { isFocused }) => ({
+      ...provided,
+      transform: isFocused ? 'rotate(180deg)' : 'rotate(0deg)',
+      transition: 'transform 0.3s ease-in-out',
+      color: 'black',
+      ':hover': { color: 'black' },
+    }),
+    singleValue: provided => ({
+      ...provided,
+      fontWeight: '500',
+      fontSize: '16px',
+      fontFamily: 'Manrope',
+      color: 'black',
+    }),
+    placeholder: provided => ({
+      ...provided,
+      fontWeight: '500',
+      fontSize: '18px',
+      fontFamily: 'Manrope',
+      color: 'black',
+    }),
+    option: (provided, { isSelected }) => ({
+      ...provided,
+      fontWeight: '500',
+      fontSize: '16px',
+      fontFamily: 'Manrope',
+      color: isSelected ? 'black' : 'rgba(18, 20, 23, 0.2)',
+      backgroundColor: 'transparent',
+    }),
+  };
   return (
     <StyledFilter onSubmit={onSubmit}>
       <div>
         <p className="filterTitle">Car brand</p>
         <Select
-          defaultValue={selectedCarBrand}
+          // defaultValue={selectedCarBrand}
           onChange={setSelectedCarBrand}
           options={carBrands}
           className="inputBrand"
-          styles={{
-            control: (provided, state) => ({
-              ...provided,
-              height: '48px',
-              borderRadius: '14px',
-              backgroundColor: 'rgb(247, 247, 251)',
-              border: 'none',
-            }),
-          }}
+          styles={filterStyles}
+          placeholder="Enter the text"
         />
       </div>
       <div>
         <p className="filterTitle">Price/ 1 hour</p>
         <Select
-          defaultValue={selectedCarRent}
+          // defaultValue={selectedCarRent}
           onChange={setSelectedCarRent}
           options={carRent}
           className="inputRent"
-          styles={{
-            control: (provided, state) => ({
-              ...provided,
-              height: '48px',
-              borderRadius: '14px',
-              backgroundColor: 'rgb(247, 247, 251)',
-              border: 'none',
-            }),
-          }}
+          styles={filterStyles}
+          placeholder="To $"
         />
       </div>
       <div>

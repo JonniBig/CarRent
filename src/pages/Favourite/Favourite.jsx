@@ -3,17 +3,12 @@ import { StyledFavourite } from './Favourite.styled';
 import { useSelector } from 'react-redux';
 import { selectCars, selectFavCarsIds } from '../../redux/selectors';
 
-// import { fetchCars } from '../../redux/carsSlice';
 import { Card } from 'components';
 
 const Favourite = () => {
   const cars = useSelector(selectCars);
   const favCarIds = useSelector(selectFavCarsIds);
-  // const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   dispatch(fetchCars());
-  // }, [dispatch]);
+  
 
   const favouriteCars = cars.filter(car => favCarIds.includes(car.id));
   return (

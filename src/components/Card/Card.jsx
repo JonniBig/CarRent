@@ -45,7 +45,7 @@ const Card = ({
   const isCarInFavourite = favCarIds.includes(id);
   return (
     <StyledCard>
-      <div className="container">
+      <div>
         <div className="imgWrapper">
           <button
             onClick={() => onToggleFav(id)}
@@ -57,12 +57,18 @@ const Card = ({
           <img src={img} alt={description} className="image" />
         </div>
         <div className="title">
-          <p>
+          <h3 className="titleMake">
             {make} <span className="model">{model}</span>, {year}
-          </p>
-          <p>{rentalPrice}</p>
+          </h3>
+          <p className="rentalPrice">{rentalPrice}</p>
         </div>
-        <div className="options">{options.join(' | ')}</div>
+        <div className="options">
+          {options.map((option, idx) => (
+            <span key={`${option}_${idx}`} className="option">
+              {option}
+            </span>
+          ))}
+        </div>
       </div>
       <button type="button" className="learnBtn" onClick={toggleModal}>
         <p>Learn more</p>

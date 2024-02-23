@@ -44,7 +44,6 @@ const CarDetail = ({
 
   return (
     <StyledCarDetail>
-      {/* <div className="container"> */}
       <img src={img} alt={description} className="image" />
       <div className="title">
         <p>
@@ -79,7 +78,6 @@ const CarDetail = ({
           <p>Rental car</p>
         </button>
       </a>
-      {/* </div> */}
     </StyledCarDetail>
   );
 };

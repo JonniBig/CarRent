@@ -17,6 +17,7 @@ const Catalogue = () => {
   const filterRent = useSelector(selectFilterRent);
   const filterMileageFrom = useSelector(selectFilterMileageFrom);
   const filterMileageTo = useSelector(selectFilterMileageTo);
+  const [showLoadMoreBtn, setShowLoadMoreBtn] = useState(true);
 
   const dispatch = useDispatch();
   const [page, setPage] = useState(1);
@@ -26,7 +27,11 @@ const Catalogue = () => {
   };
 
   useEffect(() => {
-    dispatch(fetchCars(page));
+    dispatch(fetchCars(page))
+      .unwrap()
+      .then(data => {
+        if (data.cars.length < 12) setShowLoadMoreBtn(false);
+      });
   }, [dispatch, page]);
 
   const filteredCars = cars?.filter(car => {
@@ -74,7 +79,7 @@ const Catalogue = () => {
   return (
     <StyledCatalogue>
       <Filter />
-      <div className="carsWrapper">
+      <ul className="carsWrapper">
         {filteredCarsInMileageRange.map(car => (
           <Card
             key={car.id}
@@ -96,10 +101,12 @@ const Catalogue = () => {
             mileage={car.mileage}
           />
         ))}
-      </div>
-      <button type="button" className="loadBtn" onClick={handleLoadMore}>
-        Load more
-      </button>
+      </ul>
+      {showLoadMoreBtn && (
+        <button type="button" className="loadBtn" onClick={handleLoadMore}>
+          Load more
+        </button>
+      )}
     </StyledCatalogue>
   );
 };

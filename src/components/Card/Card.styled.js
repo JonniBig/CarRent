@@ -1,21 +1,31 @@
 import styled from 'styled-components';
 
-export const StyledCard = styled.div`
+export const StyledCard = styled.li`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 274px;
   height: 426px;
-  .title {
-    display: flex;
-    justify-content: space-between;
+  .titleMake {
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
-    height: 24px;
+  }
+  .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    min-height: 24px;
     margin-bottom: 8px;
   }
+  .rentalPrice {
+    line-height: 1.5;
+  }
   .options {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 12px;
+    row-gap: 4px;
     font-size: 12px;
     line-height: 1.5;
     color: rgba(18, 20, 23, 0.5);
@@ -23,7 +33,17 @@ export const StyledCard = styled.div`
   .model {
     color: rgb(52, 112, 255);
   }
-  .container {
+  .option {
+    position: relative;
+  }
+  .option:not(:last-child)::after {
+    position: absolute;
+    content: '';
+    height: 16px;
+    width: 1px;
+    background-color: rgba(18, 20, 23, 0.1);
+    right: -6px;
+    top: 0;
   }
   .image {
     border-radius: 12px;
